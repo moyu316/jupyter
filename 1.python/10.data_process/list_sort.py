@@ -1,14 +1,13 @@
-def list_sort(input_list:list):
+def list_sort_button(input_list: list):
     result_lists = []
     current_list = []
 
-    for i in range(len(input_list) - 1):
-        if abs(input_list[i + 1] - input_list[i]) > 100:
+    for i in range(len(input_list)):
+        current_list.append(input_list[i])
+        if i < len(input_list) - 1 and abs(input_list[i + 1] - input_list[i]) > 50:
             result_lists.append(current_list)
             current_list = []
-        current_list.append(input_list[i+1])
 
-    # Add the last element and remaining sublist to the result
     current_list.append(input_list[-1])
     result_lists.append(current_list)
 
